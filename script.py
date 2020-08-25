@@ -1,4 +1,4 @@
-import requests, pprint, random
+import requests, random
 from collections import defaultdict
 
 
@@ -25,7 +25,6 @@ def retrive_all_problems():
 
 def is_problem_unsolved(handles, contestId, problemId):
     s = 'https://codeforces.com/api/contest.standings?contestId={}&from=1&showUnofficial=true'.format(contestId) + '&handles=' + ';'.join(handles)
-    # print(s)
     r2 = requests.get(s).json()
     if r2['status'] == 'FAILED':
         print("request failed")
@@ -42,8 +41,6 @@ def is_problem_unsolved(handles, contestId, problemId):
             for i in range(len(p)):
                 if p[i]['points'] > 0.0:
                     solved.append(problem_indices[i])
-            # print(row['party']['members'])
-            # print(*solved)
             if problemId in solved:
                 return False
     return True

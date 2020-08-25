@@ -9,3 +9,7 @@
 
 **ps** Since there is limit to number of API requests that can be made to cf per second, program is slow. If number of participants is larger
 you might have to wait a few minutes, (grab a coffee and watch the script in action)
+
+### Requirements
+* python3
+* requests library ('pip3 install requests' will do)
