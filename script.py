@@ -48,22 +48,23 @@ def is_problem_unsolved(handles, contestId, problemId):
 
 def get_n_unsolved_problems(n, ratingwise_problems, rating, handles):
     unsolved = []
-    while True:
-        for p in ratingwise_problems[rating]:
-            print("checking", p)
-            if is_problem_unsolved(handles, p[0], p[1]):
-                print("valid")
-                unsolved.append(p)
-            else:
-                print("invalid")
-            if len(unsolved) == n:
-                return unsolved
+    for p in ratingwise_problems[rating]:
+        print("checking", p)
+        if is_problem_unsolved(handles, p[0], p[1]):
+            print("valid")
+            unsolved.append(p)
+        else:
+            print("invalid")
+        if len(unsolved) == n:
+            return unsolved
 
 def main():
-    handles = ['yashwant_singh', 'deepanshu_pali', '0xero7', 'ravishekr7']
+    f = open('handles.txt')
+    handles = f.read().split('\n')
+    f.close()
 
     ratingwise_problems = retrive_all_problems()
-    print(len(ratingwise_problems[800]))
+    # print(len(ratingwise_problems[800]))
 
     # print(is_problem_unsolved(handles, 1401, 'A'))
     # print(is_problem_unsolved(handles, 1401, 'B'))
@@ -72,7 +73,18 @@ def main():
     # print(is_problem_unsolved(handles, 1401, 'E'))
     # print(is_problem_unsolved(handles, 1401, 'F'))
 
-    print(get_n_unsolved_problems(5, ratingwise_problems, 800, handles))
+    print("Enter number of unique rating problems: ")
+    t = int(input())
+    print("Enter number of problems of each type: ")
+    n = int(input())
+
+    types = []
+    for i in range(1, t+1):
+        print("Enter the rating of problem type {}[800 - 3500]: ".format(i))
+        types.append(int(input()))
+        
+    for t in types:
+        print(get_n_unsolved_problems(n, ratingwise_problems, t, handles))
 
 
 if __name__ == "__main__":
