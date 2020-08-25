@@ -31,15 +31,17 @@ def is_problem_unsolved(handles, contestId, problemId):
         print("request failed")
     else:
         rows = r2['result']['rows']
-
+        problem_indices = []
+        for p in r2['result']['problems']:
+            problem_indices.append(p['index'])
+        
         for row in rows[1:]:
             p = row['problemResults']
-            temp = "ABCDEFGHIJKLMNOPQRSTUVWZYZ"
             i = 0
             solved = []
             for i in range(len(p)):
                 if p[i]['points'] > 0.0:
-                    solved.append(temp[i])
+                    solved.append(problem_indices[i])
             # print(row['party']['members'])
             # print(*solved)
             if problemId in solved:
@@ -59,19 +61,11 @@ def get_n_unsolved_problems(n, ratingwise_problems, rating, handles):
             return unsolved
 
 def main():
-    f = open('handles.txt')
-    handles = f.read().split('\n')
-    f.close()
+    f1 = open('handles.txt', 'r')
+    f2 = open('problems.txt', 'w')
+    handles = f1.read().split('\n')
 
     ratingwise_problems = retrive_all_problems()
-    # print(len(ratingwise_problems[800]))
-
-    # print(is_problem_unsolved(handles, 1401, 'A'))
-    # print(is_problem_unsolved(handles, 1401, 'B'))
-    # print(is_problem_unsolved(handles, 1401, 'C'))
-    # print(is_problem_unsolved(handles, 1401, 'D'))
-    # print(is_problem_unsolved(handles, 1401, 'E'))
-    # print(is_problem_unsolved(handles, 1401, 'F'))
 
     print("Enter number of unique rating problems: ")
     t = int(input())
@@ -84,8 +78,16 @@ def main():
         types.append(int(input()))
         
     for t in types:
-        print(get_n_unsolved_problems(n, ratingwise_problems, t, handles))
+        f2.write("Rating: " + str(t) + '\n')
+        unsolved = get_n_unsolved_problems(n, ratingwise_problems, t, handles)
+        for u in unsolved:
+            ind = str(u[0]) + u[1]
+            link = 'https://codeforces.com/problemset/problem/{}/{}'.format(u[0], u[1])
+            f2.write(ind + " : " + link + "\n")
+        f2.write("\n")
 
+    f1.close()
+    f2.close()
 
 if __name__ == "__main__":
     main()

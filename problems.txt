@@ -1,0 +1,10 @@
+Rating: 2100
+207D10 : https://codeforces.com/problemset/problem/207/D10
+549H : https://codeforces.com/problemset/problem/549/H
+675C : https://codeforces.com/problemset/problem/675/C
+
+Rating: 2300
+629E : https://codeforces.com/problemset/problem/629/E
+1009F : https://codeforces.com/problemset/problem/1009/F
+383D : https://codeforces.com/problemset/problem/383/D
+
