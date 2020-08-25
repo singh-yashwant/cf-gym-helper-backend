@@ -1,20 +1,15 @@
-Rating: 800
-1002A1 : https://codeforces.com/problemset/problem/1002/A1
-157A : https://codeforces.com/problemset/problem/157/A
+Rating: 1600
+1002B2 : https://codeforces.com/problemset/problem/1002/B2
+95A : https://codeforces.com/problemset/problem/95/A
+72H : https://codeforces.com/problemset/problem/72/H
 
-Rating: 1000
-958B1 : https://codeforces.com/problemset/problem/958/B1
-626A : https://codeforces.com/problemset/problem/626/A
+Rating: 1800
+201B : https://codeforces.com/problemset/problem/201/B
+1388C : https://codeforces.com/problemset/problem/1388/C
+1244D : https://codeforces.com/problemset/problem/1244/D
 
-Rating: 1000
-958B1 : https://codeforces.com/problemset/problem/958/B1
-626A : https://codeforces.com/problemset/problem/626/A
-
-Rating: 1200
-176A : https://codeforces.com/problemset/problem/176/A
-145A : https://codeforces.com/problemset/problem/145/A
-
-Rating: 1400
-1162B : https://codeforces.com/problemset/problem/1162/B
-245E : https://codeforces.com/problemset/problem/245/E
+Rating: 2000
+1156C : https://codeforces.com/problemset/problem/1156/C
+131F : https://codeforces.com/problemset/problem/131/F
+533B : https://codeforces.com/problemset/problem/533/B
 

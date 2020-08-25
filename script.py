@@ -57,10 +57,23 @@ def get_n_unsolved_problems(n, ratingwise_problems, rating, handles):
         if len(unsolved) == n:
             return unsolved
 
+def validate_handles(handles):
+    for i in range(len(handles)):
+        handles[i] = handles[i].strip()
+    print("validating the handles")
+    for h in handles:
+        print("validating", h, end=" ")
+        r = requests.get('https://codeforces.com/api/user.info?handles=' + h).json()
+        print(r['status'])
+        if(r['status'] == 'FAILED'):
+            handles.remove(h)
+    return handles
+
 def main():
     f1 = open('handles.txt', 'r')
     f2 = open('problems.txt', 'w')
     handles = f1.read().split('\n')
+    handles = validate_handles(handles)
 
     ratingwise_problems = retrive_all_problems()
 
@@ -82,6 +95,8 @@ def main():
             link = 'https://codeforces.com/problemset/problem/{}/{}'.format(u[0], u[1])
             f2.write(ind + " : " + link + "\n")
         f2.write("\n")
+
+    print("ALL PROBLEMS FETCHED\nCheck 'problmes.txt' for list of problems")
 
     f1.close()
     f2.close()
