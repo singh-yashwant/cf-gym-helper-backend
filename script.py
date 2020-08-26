@@ -69,12 +69,18 @@ def validate_handles(handles):
             handles.remove(h)
     return handles
 
-def main():
+def retrive_handles_from_text_file():
     f1 = open('handles.txt', 'r')
-    f2 = open('problems.txt', 'w')
     handles = f1.read().split('\n')
     handles = validate_handles(handles)
+    f1.close()
+    return handles
 
+def retrive_handles_from_contest_registeration(contestId, gym=False):
+    return []
+
+def main():
+    handles = retrive_handles_from_text_file()
     ratingwise_problems = retrive_all_problems()
 
     print("Enter number of unique rating problems: ")
@@ -87,6 +93,7 @@ def main():
         print("Enter the rating of problem type {}[800 - 3500]: ".format(i))
         types.append(int(input()))
         
+    f2 = open('problems.txt', 'w')
     for t in types:
         f2.write("Rating: " + str(t) + '\n')
         unsolved = get_n_unsolved_problems(n, ratingwise_problems, t, handles)
@@ -98,7 +105,6 @@ def main():
 
     print("ALL PROBLEMS FETCHED\nCheck 'problmes.txt' for list of problems")
 
-    f1.close()
     f2.close()
 
 if __name__ == "__main__":

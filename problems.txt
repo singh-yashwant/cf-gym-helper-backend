@@ -1,15 +1,9 @@
-Rating: 1600
-1002B2 : https://codeforces.com/problemset/problem/1002/B2
-95A : https://codeforces.com/problemset/problem/95/A
-72H : https://codeforces.com/problemset/problem/72/H
-
 Rating: 1800
-201B : https://codeforces.com/problemset/problem/201/B
-1388C : https://codeforces.com/problemset/problem/1388/C
-1244D : https://codeforces.com/problemset/problem/1244/D
+33C : https://codeforces.com/problemset/problem/33/C
 
-Rating: 2000
-1156C : https://codeforces.com/problemset/problem/1156/C
-131F : https://codeforces.com/problemset/problem/131/F
-533B : https://codeforces.com/problemset/problem/533/B
+Rating: 1200
+1099C : https://codeforces.com/problemset/problem/1099/C
+
+Rating: 1400
+8B : https://codeforces.com/problemset/problem/8/B
 
