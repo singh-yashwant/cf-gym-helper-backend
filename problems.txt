@@ -1,9 +1,16 @@
-Rating: 1800
-33C : https://codeforces.com/problemset/problem/33/C
-
 Rating: 1200
-1099C : https://codeforces.com/problemset/problem/1099/C
+682B : https://codeforces.com/problemset/problem/682/B
+27A : https://codeforces.com/problemset/problem/27/A
 
 Rating: 1400
-8B : https://codeforces.com/problemset/problem/8/B
+44E : https://codeforces.com/problemset/problem/44/E
+475B : https://codeforces.com/problemset/problem/475/B
+
+Rating: 1600
+1175B : https://codeforces.com/problemset/problem/1175/B
+333A : https://codeforces.com/problemset/problem/333/A
+
+Rating: 1800
+148D : https://codeforces.com/problemset/problem/148/D
+185B : https://codeforces.com/problemset/problem/185/B
 
