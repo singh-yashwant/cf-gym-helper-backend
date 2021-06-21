@@ -34,3 +34,6 @@ with *HTTP 200" response
 ## Keys explained
 - In "handles": [], include all the handles you want to get unique unsolved problems for
 - In "problems", include the key value pairs about the details of the problems requried, eg in above request we asked for 3 800 rating and 4 1200 rating problems
+
+### API endpoint
+https://cf-gym-helper.herokuapp.com/
