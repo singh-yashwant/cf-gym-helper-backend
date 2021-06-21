@@ -11,6 +11,8 @@ class Problems(Resource):
 
     def get(self):
         reqData = json.loads(request.data) if request.data else None
+        if not handles:
+            return {"Missing handles"}, 400
         handles = reqData["handles"]
         
         # remove invalid handles
