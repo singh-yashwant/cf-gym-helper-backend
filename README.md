@@ -1,15 +1,36 @@
-# cf-gym-helper
-## Tired of spending too much time selecting unique problems for a codeforces mashup contest, this tool will do this automatically for you
+# cf-gym-helper API
 
-### How to use
-**Step1:** Dowload this folder locally(all 3 files should be in same folder)<br>
-**Step2:** Open the handles.txt file and list handles of all participants you want to consider for mashup contest (each handle should be in it's own line, see the default file)<br>
-**Step3:** Run the script, all the details will be asked interactively<br> 
-**Step4:** Id of all the genearted problems along with the link will be copied to 'problems.txt' file<br><br>
+### GET request format
+This is a sample request
+{
+    "handles": ["yashwant_singh", "0xero7"],
+    "problems": {
+        "800": 3,
+        "1200": 4,
+    }
+}
 
-**ps** Since there is limit to number of API requests that can be made to cf per second, program is slow. If number of participants is larger
-you might have to wait a few minutes, (grab a coffee and watch the script in action)
+## return object 
+Return object for above request
+{
+    "Status": true,
+    "data": {
+        "800": [
+            "https://codeforces.com/problemset/problem/1270/A",
+            "https://codeforces.com/problemset/problem/1104/A",
+            "https://codeforces.com/problemset/problem/769/A"
+        ],
+        "1200": [
+            "https://codeforces.com/problemset/problem/1433/D",
+            "https://codeforces.com/problemset/problem/1013/B",
+            "https://codeforces.com/problemset/problem/1491/B",
+            "https://codeforces.com/problemset/problem/802/M"
+        ]
+    }
+}
 
-### Requirements
-* python3
-* requests library ('pip3 install requests' will do)
+with *HTTP 200" response
+
+## Keys explained
+- In "handles": [], include all the handles you want to get unique unsolved problems for
+- In "problems", include the key value pairs about the details of the problems requried, eg in above request we asked for 3 800 rating and 4 1200 rating problems
