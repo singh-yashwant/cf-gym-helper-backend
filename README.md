@@ -2,6 +2,7 @@
 
 ### GET request format
 This is a sample request
+```json
 {
     "handles": ["yashwant_singh", "0xero7"]
     "problems": {
@@ -9,9 +10,11 @@ This is a sample request
         "1200": 4,
     }
 }
+```
 
 ## return object 
 Return object for above request
+```json
 {
     "Status": true,
     "data": {
@@ -28,8 +31,9 @@ Return object for above request
         ]
     }
 }
+```
 
-with *HTTP 200" response
+with *HTTP 200* response
 
 ## Keys explained
 - In "handles": [], include all the handles you want to get unique unsolved problems for
@@ -37,3 +41,6 @@ with *HTTP 200" response
 
 ### API endpoint
 https://cf-gym-helper.herokuapp.com/
+
+### Use the web based application here 
+https://cf-gym-helper-web.herokuapp.com/
