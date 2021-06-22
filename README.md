@@ -3,7 +3,7 @@
 ### GET request format
 This is a sample request
 {
-    "handles": ["yashwant_singh", "0xero7"],
+    "handles": ["yashwant_singh", "0xero7"]
     "problems": {
         "800": 3,
         "1200": 4,
