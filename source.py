@@ -12,7 +12,7 @@ class Problems(Resource):
     def get(self):
         reqData = json.loads(request.data) if request.data else None
         if not reqData:
-            return {"Missing handles"}, 400
+            return "Missing handles", 400
         handles = reqData["handles"]
         
         # remove invalid handles
@@ -20,8 +20,11 @@ class Problems(Resource):
         ratingwise_problems = self.retrive_all_problems()
         # print(ratingwise_problems.keys())
 
-        problemsToFetch = reqData["problems"]
-        print(problemsToFetch)
+        try:
+            problemsToFetch = reqData["problems"]
+            print(problemsToFetch)
+        except KeyError:
+            return "No problem data", 400
             
         for rating in problemsToFetch.keys():
             self.result["data"][rating] = []
