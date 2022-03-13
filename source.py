@@ -16,7 +16,10 @@ class Problems(Resource):
         handles = reqData["handles"]
         
         # remove invalid handles
-        handles = self.validate_handles(handles)
+        try:
+            handles = self.validate_handles(handles)
+        except:
+            return "Codeforces API is down try again in some time", 400
         ratingwise_problems = self.retrive_all_problems()
         # print(ratingwise_problems.keys())
 
